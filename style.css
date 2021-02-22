@@ -1,0 +1,41 @@
+
+/** Google font **/
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap');
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:black;
+    font-family: 'Shippori Mincho', serif;
+    color: white;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+header {}
+
+header h1 {
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+main .container {}
+
+#displayCharacters {
+    margin: 15px auto;
+}
+
+#panelCommand {
+    margin: 15px auto;}
+
+#creatCharacters {
+    margin: 15px auto;}
+
+#logPlayers {
+    margin: 15px auto;}
+
+footer {}

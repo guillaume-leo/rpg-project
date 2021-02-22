@@ -20,27 +20,13 @@
                 <textarea class="form-control" id="textAreaPlayer1" rows="8"></textarea>
             </section></div>
             <section class="col-md-6 form-outline">  
-                <label class="form-label" for="textAreaPlayer1">Display Player 2</label>
-                <textarea class="form-control" id="textAreaPlayer1" rows="8"></textarea>
+                <label class="form-label" for="textAreaPlayer2">Display Player 2</label>
+                <textarea class="form-control" id="textAreaPlayer2" rows="8"></textarea>
             </section>
         </section>
         <section id="panelCommand" class="row">
             <section class="col-sm-3 col-md-3 text-right">
-                <h3>Player 1</h3>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Heal</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
-            </section>
-        </section>
-        <section id="panelCommand" class="row">
-            <section class="col-sm-3 col-md-3 text-right">
-                <h3>Player 2</h3>
+                <label class="form-label">Player 1 of Player 2</label>
             </section>
             <section class="col-sm-3 col-md-3">
                 <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
@@ -78,14 +64,38 @@
                 <label class="form-label" for="Races">Races</label>
             </section>
         </section>
+        <section id="creatCharacters" class="row"> 
+            <section class="col-sm-4 col-md-4 align-center">
+                <input type="text" id="typeTextName" class="form-control" />
+                <label class="form-label" for="typeText">Player Name</label>
+            </section>
+            <section class="col-sm-4 col-md-4 align-center">
+                <select class="custom-select">
+                    <option selected>Items</option>
+                    <option value="1">Boots</option>
+                    <option value="2">Staff</option>
+                    <option value="3">Sword</option>
+                    <option value="3">Bow</option>
+                </select>
+                <label class="form-label" for="items">Items</label>
+            </section>
+            <section class="col-sm-4 col-md-4 align-center">
+                <select class="custom-select">
+                    <option selected>Races</option>
+                    <option value="1">Humans</option>
+                    <option value="2">Orcs</option>
+                    <option value="3">Elves</option>
+                    <option value="3">Vampires</option>
+                </select>
+                <label class="form-label" for="Races">Races</label>
+            </section>
+        </section>
         <section id="logPlayers">
             <section class="col-sm-6 col-md-6 form-outline">  
                 <textarea class="form-control" id="textAreaPlayer1" rows="2"></textarea>
-                <label class="form-label" for="textAreaPlayer1">Journal logs Player 1</label>
+                <label class="form-label" for="textAreaPlayer1">Journal logs Player 1 & Player 2</label>
             </section>
-            <section class="col-sm-6 col-md-6 form-outline">  
-                <textarea class="form-control" id="textAreaPlayer2" rows="2"></textarea>
-                <label class="form-label" for="textAreaPlayer2">Journal logs Player 2</label>
+            <section class="col-sm-6 col-md-6 form-outline"> 
             </section>            
         </section>
     </main>

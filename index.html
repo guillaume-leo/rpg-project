@@ -4,12 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5c3cdba868.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>rpg-project</title>
+    <title>RPG-Project</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Titre de notre challenge RPG</h1>
+    </header>
+    <main class="container">
+        <section id="displayCharacters" class="row display1">
+            <div class="col-md-6"></div>
+            <div class="col-md-6"></div>
+        </section>
+        <section id="panelCommand" class="row">
+            <section class="col-sm-3 col-md-3 text-right">
+                <h3>Player 1</h3>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Heal</button>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
+            </section>
+        </section>
+        <section id="panelCommand" class="row">
+            <section class="col-sm-3 col-md-3 text-right">
+                <h3>Player 2</h3>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Heal</button>
+            </section>
+            <section class="col-sm-3 col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
+            </section>
+        </section>
+        <section id="creatCharacters" class="row"> 
+            <section class="col-sm-4 col-md-4 align-center">
+                <input type="text" id="typeTextName" class="form-control" />
+                <label class="form-label" for="typeText">Player Name</label>
+            </section>
+            <section class="col-sm-4 col-md-4 align-center">
+                <select class="custom-select">
+                    <option selected>Items</option>
+                    <option value="1">Boots</option>
+                    <option value="2">Staff</option>
+                    <option value="3">Sword</option>
+                    <option value="3">Bow</option>
+                </select>
+                <label class="form-label" for="items">Items</label>
+            </section>
+            <section class="col-sm-4 col-md-4 align-center">
+                <select class="custom-select">
+                    <option selected>Races</option>
+                    <option value="1">Humans</option>
+                    <option value="2">Orcs</option>
+                    <option value="3">Elves</option>
+                    <option value="3">Vampires</option>
+                </select>
+                <label class="form-label" for="Races">Races</label>
+            </section>
+        </section>
+        <section id="logPlayers">
+            <section class="col-sm-6 col-md-6 form-outline">  
+                <textarea class="form-control" id="textAreaPlayer1" rows="2"></textarea>
+                <label class="form-label" for="textAreaPlayer1">Journal logs Player 1</label>
+            </section>
+            <section class="col-sm-6 col-md-6 form-outline">  
+                <textarea class="form-control" id="textAreaPlayer2" rows="2"></textarea>
+                <label class="form-label" for="textAreaPlayer2">Journal logs Player 2</label>
+            </section>            
+        </section>
+    </main>
+
+
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="character.js"></script>
+    <script src="gamelogic.js"></script>
 </body>
-<script src="character.js"></script>
-<script src="gamelogic.js"></script>
 </html>

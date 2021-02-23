@@ -16,7 +16,7 @@ class Player{
         switch (item){
             case "Boots":
                 this.dodge += this.dodge / 100 * 30;
-                break;
+                break;p2
             case "Staff":
                 this.healing += this.healing / 100 * 20;
                 break;
@@ -41,27 +41,37 @@ class Player{
         }
     }
 
+    getDoubleAttack(){
+        var result = 1;
+        if ((Math.random()*100) < this.doubleAttack){
+            console.log(this.name + " double attaque!");
+            result ++;    // double attaque se produit
+        }
+        return result;
+    }
+
 
     // une method qui va evaluer la chance qu'un dodge se produise
     getDodge(p){
-        var result = 1
-        if ((Math.random()*100) < this.dodge){
+        var result = 1;
+        if ((Math.random()*100) < p.dodge){
             result --; // le dodge se produit
             console.log(p +" a esquivé l'attaque!");
         }
         return result;
     }
 
-    attackSend(p){
-        p.life -= this.dammage * p.dammageTaken * p.getDodge(p.name);
+    hit(p){
+        p.life -= this.dammage * p.dammageTaken * p.getDodge(p.name) * this.getDoubleAttack();
+    }
+
+    heal(){
+        this.life += this.healing;
     }
 }
 
+p1.hit(p2)
 
-let p1 = new Player("Guillaume", "Orcs", "Sword");
-let p2 = new Player("Christian", "Humans", "Boots");
+p1 = new Player("Christian", "Orcs", "Sword");
+p2 = new Player("Guillaume", "Humans", "Boots");
 
-p1.attackSend(p2);
-
-
-console.log(p2);

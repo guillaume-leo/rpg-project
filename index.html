@@ -38,43 +38,46 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
             </section>
         </section>
-        <form>        
+        <form action="mailto:christian.jadot@telenet.be" method="post" enctype="text/plain" onsubmit="valEmail()">
+            <section>
+                <h3 class="ml-3">Inscription Player 1</h3>
+            </section>        
             <section id="creatCharacters" class="form-row"> 
                 <section class="col-sm-4 col-md-4 align-center">
                     <input type="text" class="form-control" id="validationDefault01" placeholder="Player Name" value="" required>
-                    <label for="validationDefault01">Player Name</label>
+                    <!-- <label for="validationDefault01">Player Name</label> -->
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
                     <select class="custom-select form-control" id="validationDefault02" value="" required>
-                        <option value="">Avatar</option>
+                        <option value="0">Avatar</option>
                         <option value="1">img01</option>
                         <option value="2">img02</option>
                         <option value="3">img03</option>
                     </select>
-                    <label for="validationDefault02">Avatar</label>
+                    <!-- <label for="validationDefault02">Avatar</label> -->
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select form-control" id="validationDefault03 items" value="" required>
-                        <option value="">Items</option>
+                    <select class="custom-select form-control" id="validationDefault03" value="" required>
+                        <option value="0">Items</option>
                         <option value="1">Boots</option>
                         <option value="2">Staff</option>
                         <option value="3">Sword</option>
                         <option value="3">Bow</option>
                     </select>
-                    <label for="validationDefault03">Items</label>
+                    <!-- <label for="validationDefault03">Items</label> -->
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select form-control" id="validationDefault04 races" required>
-                        <option value="">Races</option>
+                    <select class="custom-select form-control" id="validationDefault04" required>
+                        <option value="0">Races</option>
                         <option value="1">Humans</option>
                         <option value="2">Orcs</option>
                         <option value="3">Elves</option>
                         <option value="3">Vampires</option>
                     </select>
-                    <label for="validationDefault04">Races</label>
+                    <!-- <label for="validationDefault04">Races</label> -->
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <button class="btn btn-primary" type="submit">Valider</button>
+                    <button class="btn btn-primary" onclick="validate();" type="button">Valider</button>
                 </section>
             </section>
         </form>

@@ -38,83 +38,50 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
             </section>
         </section>
-        <section id="creatCharacters" class="row"> 
-            <section class="col-sm-3 col-md-3 align-center">
-                <input type="text" id="typeTextName" class="form-control" />
-                <label class="form-label" for="typeText">Player Name</label>
+        <form class="needs-validation" novalidate>
+            <section id="creatCharacters" class="row"> 
+                <section class="col-sm-4 col-md-4 align-center">
+                    <input type="text" id="typePlayer1" class="form-control is-valid" />
+                    <label class="form-label" for="typeText">Player Name</label>
+                </section>
+                <section class="col-sm-2 col-md-2 align-center">
+                    <select class="custom-select" id="avatar" required>
+                        <option selected>Avatar</option>
+                        <option value="1">img01</option>
+                        <option value="2">img02</option>
+                        <option value="3">img03</option>
+                    </select>
+                    <!--<label class="form-label" for="items">Avatar</label>-->
+                </section>
+                <section class="col-sm-2 col-md-2 align-center">
+                    <select class="custom-select" id="items" required>
+                        <option selected>Items</option>
+                        <option value="1">Boots</option>
+                        <option value="2">Staff</option>
+                        <option value="3">Sword</option>
+                        <option value="3">Bow</option>
+                    </select>
+                    <!--<label class="form-label" for="items">Items</label>-->
+                </section>
+                <section class="col-sm-2 col-md-2 align-center">
+                    <select class="custom-select" id="races" required>
+                        <option selected>Races</option>
+                        <option value="1">Humans</option>
+                        <option value="2">Orcs</option>
+                        <option value="3">Elves</option>
+                        <option value="3">Vampires</option>
+                    </select>
+                    <!--<label class="form-label" for="Races">Races</label>-->
+                </section>
+                <section class="col-sm-2 col-md-2 align-center">
+                    <button class="btn btn-primary" type="submit">Valider</button>
+                </section>
             </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Avatar</option>
-                    <option value="1">img01</option>
-                    <option value="2">img02</option>
-                    <option value="3">img03</option>
-                    <option value="4">url</option>
-                </select>
-                <!--<label class="form-label" for="items">Avatar</label>-->
-                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Items</option>
-                    <option value="1">Boots</option>
-                    <option value="2">Staff</option>
-                    <option value="3">Sword</option>
-                    <option value="3">Bow</option>
-                </select>
-                <!--<label class="form-label" for="items">Items</label>-->
-            </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Races</option>
-                    <option value="1">Humans</option>
-                    <option value="2">Orcs</option>
-                    <option value="3">Elves</option>
-                    <option value="3">Vampires</option>
-                </select>
-                <!--<label class="form-label" for="Races">Races</label>-->
-            </section>
-        </section>
-        <section id="creatCharacters" class="row"> 
-            <section class="col-sm-3 col-md-3 align-center">
-                <input type="text" id="typeTextName" class="form-control" />
-                <label class="form-label" for="typeText">Player Name</label>
-            </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Avatar</option>
-                    <option value="1">img01</option>
-                    <option value="2">img02</option>
-                    <option value="3">img03</option>
-                    <option value="3">url</option>
-                </select>
-                <!--<label class="form-label" for="items">Avatar</label>-->
-            </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Items</option>
-                    <option value="1">Boots</option>
-                    <option value="2">Staff</option>
-                    <option value="3">Sword</option>
-                    <option value="3">Bow</option>
-                </select>
-                <!--<label class="form-label" for="items">Items</label>-->
-            </section>
-            <section class="col-sm-3 col-md-3 align-center">
-                <select class="custom-select">
-                    <option selected>Races</option>
-                    <option value="1">Humans</option>
-                    <option value="2">Orcs</option>
-                    <option value="3">Elves</option>
-                    <option value="3">Vampires</option>
-                </select>
-                <!--<label class="form-label" for="Races">Races</label>-->
-            </section>
+        </form>
         </section>
         <section id="logPlayers">
             <section class="col-sm-6 col-md-6 form-outline">  
-                <textarea class="form-control" id="textAreaPlayer1" rows="2"></textarea>
+                <textarea class="form-control" id="journalLogs" rows="2"></textarea>
                 <label class="form-label" for="textAreaPlayer1">Journal logs Player 1 & Player 2</label>
             </section>
             <section class="col-sm-6 col-md-6 form-outline"> 

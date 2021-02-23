@@ -38,40 +38,40 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
             </section>
         </section>
-        <form class="needs-validation" novalidate>
-            <section id="creatCharacters" class="row"> 
+        <form>        
+            <section id="creatCharacters" class="form-row"> 
                 <section class="col-sm-4 col-md-4 align-center">
-                    <input type="text" id="typePlayer1" class="form-control is-valid" />
-                    <label class="form-label" for="typeText">Player Name</label>
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Player Name" value="" required>
+                    <label for="validationDefault01">Player Name</label>
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select" id="avatar" required>
+                    <select class="custom-select" id="validationDefault02 avatar" value="" required>
                         <option selected>Avatar</option>
                         <option value="1">img01</option>
                         <option value="2">img02</option>
                         <option value="3">img03</option>
                     </select>
-                    <!--<label class="form-label" for="items">Avatar</label>-->
+                    <label for="validationDefault02">Avatar</label>
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select" id="items" required>
+                    <select class="custom-select" id="validationDefault03 items" value="" required>
                         <option selected>Items</option>
                         <option value="1">Boots</option>
                         <option value="2">Staff</option>
                         <option value="3">Sword</option>
                         <option value="3">Bow</option>
                     </select>
-                    <!--<label class="form-label" for="items">Items</label>-->
+                    <label for="validationDefault03">Items</label>
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select" id="races" required>
+                    <select class="custom-select" id="validationDefault04 races" required>
                         <option selected>Races</option>
                         <option value="1">Humans</option>
                         <option value="2">Orcs</option>
                         <option value="3">Elves</option>
                         <option value="3">Vampires</option>
                     </select>
-                    <!--<label class="form-label" for="Races">Races</label>-->
+                    <label for="validationDefault04">Races</label>
                 </section>
                 <section class="col-sm-2 col-md-2 align-center">
                     <button class="btn btn-primary" type="submit">Valider</button>

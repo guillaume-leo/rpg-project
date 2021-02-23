@@ -70,8 +70,5 @@ class Player{
     }
 }
 
-p1.hit(p2)
-
-p1 = new Player("Christian", "Orcs", "Sword");
-p2 = new Player("Guillaume", "Humans", "Boots");
+var players = [];
 

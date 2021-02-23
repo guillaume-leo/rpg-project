@@ -14,6 +14,9 @@
         <h1 class="text-center my-4">Titre de notre challenge RPG</h1>
     </header>
     <main class="container">
+ 
+
+
         <section id="displayCharacters" class="row display1">
             <section class="col-md-6 form-outline"> 
                 <label class="form-label" for="textAreaPlayer1">Display Player 1</label> 
@@ -38,37 +41,39 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
             </section>
         </section>
-        <form class="needs-validation" novalidate>
-            <section id="creatCharacters" class="row"> 
-                <section class="col-sm-4 col-md-4 align-center">
-                    <input type="text" id="typePlayer1" class="form-control is-valid" />
+        <form class="was-validated" novalidate>
+            <section id="creatCharacters" class="row "> 
+                <section class="col-sm-4 col-md-4 align-center form-group">
+                    <input onchange="init()" type="text" id="typePlayer1" class="form-control " />
                     <label class="form-label" for="typeText">Player Name</label>
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section onchange="init()" class="col-sm-2 col-md-2 align-center form-group">
                     <select class="custom-select" id="avatar" required>
                         <option selected>Avatar</option>
-                        <option value="1">img01</option>
-                        <option value="2">img02</option>
-                        <option value="3">img03</option>
+                        <option value="0">img01</option>
+                        <option value="1">img02</option>
+                        <option value="2">img03</option>
                     </select>
+                    <div class="invalid-feedback">Example invalid custom select feedback</div>
+
                     <!--<label class="form-label" for="items">Avatar</label>-->
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section onchange="init()" class="col-sm-2 col-md-2 align-center">
                     <select class="custom-select" id="items" required>
                         <option selected>Items</option>
-                        <option value="1">Boots</option>
-                        <option value="2">Staff</option>
-                        <option value="3">Sword</option>
+                        <option value="0">Boots</option>
+                        <option value="1">Staff</option>
+                        <option value="2">Sword</option>
                         <option value="3">Bow</option>
                     </select>
                     <!--<label class="form-label" for="items">Items</label>-->
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section onchange="init()" class="col-sm-2 col-md-2 align-center">
                     <select class="custom-select" id="races" required>
                         <option selected>Races</option>
-                        <option value="1">Humans</option>
-                        <option value="2">Orcs</option>
-                        <option value="3">Elves</option>
+                        <option value="0">Humans</option>
+                        <option value="1">Orcs</option>
+                        <option value="2">Elves</option>
                         <option value="3">Vampires</option>
                     </select>
                     <!--<label class="form-label" for="Races">Races</label>-->

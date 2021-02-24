@@ -11,19 +11,19 @@
 </head>
 <body id="index">
     <header>
-        <h1 class="text-center my-4">Inscrivez-vous ici pour participer à notre Jeu de Rôle</h1>
+        <h2 class="text-center my-4">Participe à notre Jeu "Troll Castel"</h2>
     </header>
     <main class="container">
         <form>
             <section>
-                <h3 class="ml-3" id="inscription">Inscription Player 1</h3>
+                <h3 class="ml-3" id="inscription">Bonjour Player 1, créé ici ton personnage...</h3>
             </section>        
-            <section id="creatCharacters" class="form-row"> 
-                <section class="col-sm-6 col-md-6 align-center mt-3">
+            <section id="creatCharacters" class="form-row align-middle"> 
+                <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
                     <input type="text" class="form-control" id="validationPlayer" placeholder="Player Name" value="" required>
                     <!-- <label for="validationDefault01">Player Name</label> -->
                 </section>
-                <section class="col-sm-6 col-md-6 align-center mt-3">
+                <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
                     <section class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="validationAvatar01" name="customRadio" value="1" checked="checked" required>
                         <label class="custom-control-label" for="validationAvatar01"><img src="images/Bixby.png" id="bixby"></label>
@@ -46,7 +46,7 @@
                     </select>
                     <!-- <label for="validationDefault02">Avatar</label>
                 </section>-->
-                <section class="col-sm-6 col-md-6 align-center mt-5">
+                <section class="col-sm-6 col-md-6 align-center mt-5 align-middle">
                     <select class="custom-select form-control" id="validationItems" value="" required>
                         <option value="0">Items</option>
                         <option value="1">Boots</option>
@@ -56,7 +56,7 @@
                     </select>
                     <!-- <label for="validationDefault03">Items</label> -->
                 </section>
-                <section class="col-sm-6 col-md-6 align-center mt-5">
+                <section class="col-sm-6 col-md-6 align-center mt-5 align-middle">
                     <select class="custom-select form-control" id="validationRaces" required>
                         <option value="0">Races</option>
                         <option value="1">Humans</option>
@@ -66,7 +66,7 @@
                     </select>
                     <!-- <label for="validationDefault04">Races</label> -->
                 </section>
-                <section class="col-sm-12 col-md-12 mt-5">
+                <section class="col-sm-12 col-md-12 mt-5 align-middle">
                     <button class="btn btn-primary" onclick="validate();" type="button">Valider</button>
                 </section>
             </section>

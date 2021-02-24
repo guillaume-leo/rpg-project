@@ -15,6 +15,7 @@ body {
     color: white;
     max-width: 90%;
     margin: 0 auto;
+    padding-top: 20px;
 }
 
 body#index {
@@ -105,7 +106,18 @@ header h1 {
     margin: 15px auto;}
 
 #logPlayers {
-    margin: 15px auto;}
+    margin: 15px auto;
+}
+#logPlayers #journal {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid black;
+    border-radius:20px;
+    background-image:url(images/bgJournalLogs.jpg);
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 10px black;
+}
 
 label img {
     max-width: 90px;

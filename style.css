@@ -34,13 +34,14 @@ header h1 {
     background-repeat: no-repeat;
     background-size: 100vw;
     box-shadow: 0px 0px 10px black;
+    border: 2px solid black;
 }
     #displayCharacters h4 {
         font-family: 'Akaya Telivigala', cursive;
     }
     #display1, #display2 {
         padding: 10px 30px;
-        border: 1px solid black;
+        border: 2px solid black;
         border-radius:20px;
     }
     #display1 {

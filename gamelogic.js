@@ -137,6 +137,4 @@ var myChart = new Chart(firstCanvas, {
 }
 createGraph();
 
-pp = new Player("pp","Elves","Sword");
-console.log(pp);
 //---------------------------FIN DU GRAPHE

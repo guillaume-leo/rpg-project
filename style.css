@@ -17,13 +17,13 @@ body {
     margin: 0 auto;
 }
 
-header {}
+body#index {
+    max-width: 60%;
+}
 
 header h1 {
     font-family: 'Akaya Telivigala', cursive;
 }
-
-main .container {}
 
 #displayCharacters {
     margin: 15px auto;
@@ -38,4 +38,6 @@ main .container {}
 #logPlayers {
     margin: 15px auto;}
 
-footer {}
+label img {
+    max-width: 90px;
+}

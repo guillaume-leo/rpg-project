@@ -1,8 +1,9 @@
 class Player{
-    constructor(name, race, item, life, dodge, healing, dammage, doubleAttack, dammageTaken, deflect, lifeSteal){
+    constructor(name, race, item, avatar, life, dodge, healing, dammage, doubleAttack, dammageTaken, deflect, lifeSteal){
         this.name = name;
         this.race = race;
         this.item = item;
+        this.avatar = avatar;
         this.life = 100;
         this.dodge = 10; // 10% de chances par défaut
         this.healing = 10;

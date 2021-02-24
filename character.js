@@ -1,5 +1,5 @@
 class Player{
-    constructor(name, race, item, avatar, life, dodge, healing, dammage, doubleAttack, dammageTaken, deflect, lifeSteal){
+    constructor(name, race, item, avatar){
         this.name = name;
         this.race = race;
         this.item = item;
@@ -10,14 +10,14 @@ class Player{
         this.dammage = 10;
         this.doubleAttack = 10; // 10% de chances par défaut
         this.dammageTaken = 1; 
-        this.deflect = 0;
+        this.deflect = 5;
         this.lifeSteal= 0;
 
         // item : 
         switch (item){
             case "Boots":
                 this.dodge += this.dodge / 100 * 30;
-                break;p2
+                break;
             case "Staff":
                 this.healing += this.healing / 100 * 20;
                 break;
@@ -38,7 +38,7 @@ class Player{
                 this.deflect = 30;
                 break;
             case "Vampires":
-                this.lifeSteal = 10; // %!!!
+                this.lifeSteal += 10; // %!!!
         }
     }
 
@@ -70,7 +70,4 @@ class Player{
         this.life += this.healing;
     }
 }
-
-var players = [];
-
 

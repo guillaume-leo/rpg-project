@@ -25,16 +25,24 @@ header h1 {
     font-family: 'Akaya Telivigala', cursive;
 }
 
-.display {
-    background-color:rgba(145, 234, 76, 0.3);
+#displayCharacters {
+    padding: 20px;
+    border-radius:30px;
+    background-image: url(images/bgScreenVS.jpg);
+    background-position: center;
+    background-size: 100vw;
 }
-    #display1 {
+    #display1, #display2 {
         padding: 10px 30px;
-        background-color:tomato;
+        border: 1px solid black;
+        border-radius:20px;
+        box-shadow: 0px 0px 5px black;
+    }
+    #display1 {
+        background-color:rgba(205, 45, 25, 0.2);
     }
     #display2 {
-        padding: 10px 30px;
-        background-color:yellowgreen;
+        background-color:rgba(25, 135, 205, 0.2);
     }
 
 #displayCharacters {

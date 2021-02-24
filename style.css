@@ -25,6 +25,18 @@ header h1 {
     font-family: 'Akaya Telivigala', cursive;
 }
 
+.display {
+    background-color:rgba(145, 234, 76, 0.3);
+}
+    #display1 {
+        padding: 10px 30px;
+        background-color:tomato;
+    }
+    #display2 {
+        padding: 10px 30px;
+        background-color:yellowgreen;
+    }
+
 #displayCharacters {
     margin: 15px auto;
 }

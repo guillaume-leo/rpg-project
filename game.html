@@ -11,14 +11,25 @@
 </head>
 <body>
     <header>
-        <h1 class="text-center my-4">Participe à notre Jeu "Troll Castel"</h1>
+        <h1 class="text-center mb-4">Participe à notre Jeu "Troll Castel"</h1>
     </header>
     <main class="container">
+        <section id="logPlayers">
+            <section class="col-sm-3 col-md-3"></section> 
+            <section class="col-sm-6 col-md-6" id="journal">
+                <h5>Journal des logs</h5>
+                <section>
+                    <p>Informations sur les étapes du jeux du Player 1</p>
+                    <p>Informations sur les étapes du jeux du Player 2</p>
+                </section> 
+            </section>
+            <section class="col-sm-3 col-md-3"></section>            
+        </section>
         <section class="row" id="displayCharacters">
             <section class="col-sm-5 col-md-5 actifP1" id="display1">
                 <h3>Player 1</h3>
                 <section>
-                    <h4>Nom du Player</h4>
+                    <h4>Guillaume</h4>
                     <img src="images/Bixby.png">
                     <p>Informations diverses concernant le Player</p>
                     <div class="progress" style="height: 5px;">
@@ -31,7 +42,7 @@
             <section class="col-sm-5 col-md-5 noActif" id="display2">
                 <h3>Player 2</h3>
                 <section>
-                    <h4>Nom du Player</h4>
+                    <h4>Christian</h4>
                     <img src="images/Froddy.png">
                     <p>Informations diverses concernant le Player</p>
                     <div class="progress" style="height: 5px;">
@@ -53,14 +64,6 @@
                 <button type="image" class="buttonBlue" onClick="">Yield</button>
             </section>
         </section>
-        </section>
-        <section id="logPlayers">
-            <section class="col-sm-6 col-md-6 form-outline">  
-                <textarea class="form-control" id="journalLogs" rows="2"></textarea>
-                <label class="form-label" for="textAreaPlayer1">Journal logs Player 1 & Player 2</label>
-            </section>
-            <section class="col-sm-6 col-md-6 form-outline"> 
-            </section>            
         </section>
     </main>
 

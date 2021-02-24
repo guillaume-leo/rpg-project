@@ -1,3 +1,12 @@
+// usefull functions
+
+function myScale(value,min1,max1,min2,max2){
+    return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
+}
+
+
+
+
 // SELECTION DES JOUEURS ET LANCEMENT DE LA PARTIE
 //---------------------------------------------------
 
@@ -65,46 +74,76 @@ function validate() {
 
 // ------------------------------------------ GRAPH
 
+
+function createGraph(){
+
 var firstCanvas = document.createElement("canvas");
 var parent = document.getElementById("graphic");
+parent.innerHTML = '';
 parent.appendChild(firstCanvas);
     
+
+
+
+var items = document.getElementById("validationItems");
+var races = document.getElementById("validationRaces");
+console.log(races.value);
+
+
+var playerStat = new Player(
+    "chart", 
+    ["", "Humans", "Orcs", "Elves", "Vampires"][parseInt(races.value)],
+    ["", "Boots", "Staff", "Sword", "Bow"][parseInt(items.value)],
+    0);
+
+    console.log(playerStat);
+
+
+
+    //------------------------------------------
 var myChart = new Chart(firstCanvas, {
     type: 'radar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['life', 'dodge', 'healing', 'dammage', 'doubleAttack', 'dammageTaken','deflect', 'lifeSteal'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [
+                myScale(playerStat.life,0,140,1,8),
+                myScale(playerStat.dodge,8,13,0,8),
+                myScale(playerStat.healing,8,15,0,8),
+                myScale(playerStat.dammage,8,14,0,8),
+                myScale(playerStat.doubleAttack,8,13,0,8),
+                myScale(playerStat.dammageTaken,0.5,1,0,8),
+                myScale(playerStat.deflect,10,30,2,8),
+                myScale(playerStat.lifeSteal,2,10,1,8)
+            ],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(0, 0, 255, 0.0)',
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+            borderColor: 'rgba(0, 0, 255 ,1.0)'
         }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+        legend: {
+            display: false
+        },
+        scale: {
+            ticks: {
+               display: false,
+               maxTicksLimit: 10,
+               beginAtZero: true
+
+            },
+            gridLines: {
+                color: ['grey', 'grey', 'grey','grey','grey','grey','grey','grey','green']
+              }
+         },
+         elements: {
+            point:{
+                radius: 0
+            }
+        }}
 });
-
-
+}
+createGraph();
 //---------------------------FIN DU GRAPHE

@@ -16,35 +16,41 @@
     <main class="container">
         <section class="row" id="displayCharacters">
             <section class="col-sm-5 col-md-5 actifP1" id="display1">
-                <h2>Player 1</h2>
+                <h3>Player 1</h3>
                 <section>
                     <h4>Nom du Player</h4>
                     <img src="images/Bixby.png">
                     <p>Informations diverses concernant le Player</p>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <!-- <progress value="70" max="100">70 %</progress> -->
                 </section> 
             </section>
             <section class="col-sm-2 col-md-2"></section>
             <section class="col-sm-5 col-md-5 actifP2" id="display2">
-                <h2>Player 2</h2>
+                <h3>Player 2</h3>
                 <section>
                     <h4>Nom du Player</h4>
                     <img src="images/Froddy.png">
                     <p>Informations diverses concernant le Player</p>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                 </section> 
             </section>
         </section>
         <section id="panelCommand" class="row">
-            <section class="col-sm-3 col-md-3 text-right">
-                <label class="form-label">Player 1 of Player 2</label>
+            <section class="col-sm-5 col-md-5 text-center pl-4">
+                <button type="image" class="buttonRed" onClick="">Hit</button>
+                <button type="image" class="buttonRed" onClick="">Heal</button>
+                <button type="image" class="buttonRed" onClick="">Yield</button>
             </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Heal</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
+            <section class="col-sm-2 col-md-2"><img src="button/red.png"></section>
+            <section class="col-sm-5 col-md-5 text-center pr-4">
+                <button type="image" class="buttonBlue" onClick="">Hit</button>
+                <button type="image" class="buttonBlue" onClick="">Heal</button>
+                <button type="image" class="buttonBlue" onClick="">Yield</button>
             </section>
         </section>
         </section>

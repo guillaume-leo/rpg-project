@@ -9,54 +9,44 @@
     <link rel="stylesheet" href="style.css">
     <title>RPG-Project</title>
 </head>
-<body>
+<body id="index">
     <header>
-        <h1 class="text-center my-4">Titre de notre challenge RPG</h1>
+        <h1 class="text-center my-4">Inscrivez-vous ici pour participer à notre Jeu de Rôle</h1>
     </header>
     <main class="container">
-        <section id="displayCharacters" class="row display1">
-            <section class="col-md-6 form-outline"> 
-                <label class="form-label" for="textAreaPlayer1">Display Player 1</label> 
-                <textarea class="form-control" id="textAreaPlayer1" rows="8"></textarea>
-            </section></div>
-            <section class="col-md-6 form-outline">  
-                <label class="form-label" for="textAreaPlayer2">Display Player 2</label>
-                <textarea class="form-control" id="textAreaPlayer2" rows="8"></textarea>
-            </section>
-        </section>
-        <section id="panelCommand" class="row">
-            <section class="col-sm-3 col-md-3 text-right">
-                <label class="form-label">Player 1 of Player 2</label>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Heal</button>
-            </section>
-            <section class="col-sm-3 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Yield</button>
-            </section>
-        </section>
         <form>
             <section>
                 <h3 class="ml-3" id="inscription">Inscription Player 1</h3>
             </section>        
             <section id="creatCharacters" class="form-row"> 
-                <section class="col-sm-4 col-md-4 align-center">
+                <section class="col-sm-6 col-md-6 align-center mt-5">
                     <input type="text" class="form-control" id="validationPlayer" placeholder="Player Name" value="" required>
                     <!-- <label for="validationDefault01">Player Name</label> -->
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section class="col-sm-6 col-md-6 align-center mt-5">
+                    <section class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="validationAvatar01" name="customRadio" value="" required>
+                        <label class="custom-control-label" for="validationAvatar01"><img src="images/Bixby.jpg" id="bixby"></label>
+                    </section>
+                    <section class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="validationAvatar02" name="customRadio" value="" required>
+                        <label class="custom-control-label" for="validationAvatar02"><img src="images/Froddy.jpg" id="froddy"></label>
+                    </section>
+                    <section class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="validationAvatar03" name="customRadio" value="" required>
+                        <label class="custom-control-label" for="validationAvatar03"><img src="images/Grelote.jpg" id="grelote"></label>
+                    </section>
+                </section>
+                <!--<section class="col-sm-2 col-md-2 align-center">
                     <select class="custom-select form-control" id="validationAvatar" value="" required>
                         <option value="0">Avatar</option>
                         <option value="1">Bixby</option>
                         <option value="2">Froddy</option>
                         <option value="3">Grelote</option>
                     </select>
-                    <!-- <label for="validationDefault02">Avatar</label> -->
-                </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                    <!-- <label for="validationDefault02">Avatar</label>
+                </section>-->
+                <section class="col-sm-6 col-md-6 align-center mt-5">
                     <select class="custom-select form-control" id="validationItems" value="" required>
                         <option value="0">Items</option>
                         <option value="1">Boots</option>
@@ -66,7 +56,7 @@
                     </select>
                     <!-- <label for="validationDefault03">Items</label> -->
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section class="col-sm-6 col-md-6 align-center mt-5">
                     <select class="custom-select form-control" id="validationRaces" required>
                         <option value="0">Races</option>
                         <option value="1">Humans</option>
@@ -76,19 +66,11 @@
                     </select>
                     <!-- <label for="validationDefault04">Races</label> -->
                 </section>
-                <section class="col-sm-2 col-md-2 align-center">
+                <section class="col-sm-12 col-md-12 mt-5">
                     <button class="btn btn-primary" onclick="validate();" type="button">Valider</button>
                 </section>
             </section>
         </form>
-        </section>
-        <section id="logPlayers">
-            <section class="col-sm-6 col-md-6 form-outline">  
-                <textarea class="form-control" id="journalLogs" rows="2"></textarea>
-                <label class="form-label" for="textAreaPlayer1">Journal logs Player 1 & Player 2</label>
-            </section>
-            <section class="col-sm-6 col-md-6 form-outline"> 
-            </section>            
         </section>
     </main>
 

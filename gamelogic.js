@@ -34,7 +34,7 @@ function validate() {
 
             players[0] = p1;
 
-            document.getElementById('inscription').innerHTML = "Inscription Player 2";
+            document.getElementById('inscription').innerHTML = "Et maintenant, c'est au tour de ton adversaire";
             name.value = "";
             avatar.value = 0;
             items.value = 0;
@@ -48,11 +48,11 @@ function validate() {
                 avatar);
 
             players[1] = p2;
-            // FAIRE TOUT DISPARAITRE OU APPARAITRE ET LANCER LE JEUX
+            window.location.href = "game.html";
         }
         player++;
     }
     console.log(players);
-  //  window.location.href = "http://www.w3schools.com";
+
 }
 

@@ -10,7 +10,7 @@ function myScale(value,min1,max1,min2,max2){
 // SELECTION DES JOUEURS ET LANCEMENT DE LA PARTIE
 //---------------------------------------------------
 
-
+var players =[];
 let player = 1;
 function validate() {
 
@@ -23,7 +23,7 @@ function validate() {
 
     var radios = document.getElementsByName('customRadio');
 
-    for (var i = 0, length = radios.length; i < length; i++) {
+    for (var i = 0, i = radios.length; i < length; i++) {
       if (radios[i].checked) {
         avatar = radios[i].value;
         break;
@@ -31,13 +31,7 @@ function validate() {
     }
 
 
-    
-
-
-
-
-
-    if (name.length < 1 || avatar.value < 1 || items.value < 1 || races.value < 1) {
+    if (name.value=="" || avatar.value < 1 || items.value < 1 || races.value < 1) {
         alert("Merci de remplir tout les champs avant de valider");
     } else {
         if (player == 1) {
@@ -87,9 +81,7 @@ parent.appendChild(firstCanvas);
 
 var items = document.getElementById("validationItems");
 var races = document.getElementById("validationRaces");
-console.log(races.value);
-
-// create an instace of Player just to generate data for the chart
+// create an instance of Player just to generate data for the chart
 var playerStat = new Player(
     "chart", 
     ["", "Humans", "Orcs", "Elves", "Vampires"][parseInt(races.value)],
@@ -107,12 +99,12 @@ var myChart = new Chart(firstCanvas, {
             label: '# of Votes',
             data: [
                 myScale(playerStat.life,0,140,1,8),
-                myScale(playerStat.dodge,8,13,0,8),
-                myScale(playerStat.healing,8,15,0,8),
-                myScale(playerStat.dammage,8,14,0,8),
-                myScale(playerStat.doubleAttack,8,13,0,8),
-                myScale(playerStat.dammageTaken,0.5,1,0,8),
-                myScale(playerStat.deflect,10,30,2,8),
+                myScale(playerStat.dodge,8,13,1,8),
+                myScale(playerStat.healing,8,15,1,8),
+                myScale(playerStat.dammage,8,14,1,8),
+                myScale(playerStat.doubleAttack,8,13,1,8),
+                myScale(playerStat.dammageTaken,0.5,1,1,8),
+                myScale(playerStat.deflect,10,30,1,8),
                 myScale(playerStat.lifeSteal,2,10,1,8)
             ],
             backgroundColor: [
@@ -144,4 +136,7 @@ var myChart = new Chart(firstCanvas, {
 });
 }
 createGraph();
+
+pp = new Player("pp","Elves","Sword");
+console.log(pp);
 //---------------------------FIN DU GRAPHE

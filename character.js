@@ -12,9 +12,8 @@ class Player{
         this.dammageTaken = 1; 
         this.deflect = 5;
         this.lifeSteal= 0;
-
         // item : 
-        switch (item){
+        switch (this.item){
             case "Boots":
                 this.dodge += this.dodge / 100 * 30;
                 break;
@@ -23,11 +22,13 @@ class Player{
                 break;
             case "Sword":
                 this.dammage += this.dammage / 100 * 40;
+                break;
             case "Bow":
                 this.doubleAttack += this.doubleAttack / 100 * 30;
+                break;
         }
         // race :
-        switch (race){
+        switch (this.race){
             case "Humans":
                 this.dammageTaken = 0.8; // 20% less than 1.0
                 break;
@@ -39,6 +40,7 @@ class Player{
                 break;
             case "Vampires":
                 this.lifeSteal += 10; // %!!!
+                break;
         }
     }
 

@@ -89,7 +89,7 @@ var items = document.getElementById("validationItems");
 var races = document.getElementById("validationRaces");
 console.log(races.value);
 
-
+// create an instace of Player just to generate data for the chart
 var playerStat = new Player(
     "chart", 
     ["", "Humans", "Orcs", "Elves", "Vampires"][parseInt(races.value)],
@@ -98,9 +98,7 @@ var playerStat = new Player(
 
     console.log(playerStat);
 
-
-
-    //------------------------------------------
+    //------------------------------------------ Chart creation
 var myChart = new Chart(firstCanvas, {
     type: 'radar',
     data: {

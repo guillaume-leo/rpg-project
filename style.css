@@ -33,6 +33,9 @@ header h1 {
     background-repeat: no-repeat;
     background-size: 100vw;
 }
+    #displayCharacters h4 {
+        font-family: 'Akaya Telivigala', cursive;
+    }
     #display1, #display2 {
         padding: 10px 30px;
         border: 1px solid black;

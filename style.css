@@ -152,3 +152,12 @@ header h1 {
 label img {
     max-width: 90px;
 }
+
+@media only screen and (max-width: 500px) {
+    #display1 {
+        margin-bottom: 30px;
+    }
+    #display2 {
+        margin-top: 30px;
+    }
+  }

@@ -10,7 +10,11 @@ html, body {
 }
 
 body {
-    background: linear-gradient(-20deg, rgba(0,40,97,1), rgba(190,0,0,1));
+    background: #01467C;
+    background: -webkit-linear-gradient(top left, #E22011, #01467C);
+    background: -moz-linear-gradient(top left, #E22011, #01467C);
+    background: linear-gradient(to bottom right, #E22011, #01467C);
+    /* background: linear-gradient(-20deg, rgba(0,40,97,1), rgba(190,0,0,1)); */
     background-repeat: repeat-y;
     font-family: 'Shippori Mincho', serif;
     color: white;

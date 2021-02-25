@@ -44,6 +44,7 @@ class Player{
         }
     }
 
+    // une method qui va evaluer la chance qu'une doubleAttaque se produise
     getDoubleAttack(){
         var result = 1;
         if ((Math.random()*100) < this.doubleAttack){
@@ -59,17 +60,37 @@ class Player{
         var result = 1;
         if ((Math.random()*100) < p.dodge){
             result --; // le dodge se produit
-            console.log(p +" a esquivé l'attaque!");
+            console.log(p.name +" a esquivé l'attaque!");
         }
         return result;
     }
 
+    // une method qui va evaluer la chance qu'un deflect se produise
+    getDeflect(p){
+        var result = 1;
+        if ((Math.random()*100) < p.deflect){
+            result --; // le dodge se produit
+            console.log(p.name +" deflect!");
+        }
+        return result;
+    }
+    
     hit(p){
-        p.life -= this.dammage * p.dammageTaken * p.getDodge(p.name) * this.getDoubleAttack();
+        p.life -= (this.dammage + (Math.random() * 6)) * p.dammageTaken * p.getDodge(p.name) * this.getDoubleAttack();
     }
 
     heal(){
         this.life += this.healing;
     }
+
+    lifeSteal(p){
+        if (this.race == "Vampires"){
+            let lifeSteal = (p.life / 100 * 10);
+            p.life -= lifeSteal;
+            this.life += lifeSteal;
+            console.log(this.name + " has stolen " + lifeSteal + " of life of " + p.name);
+        }
+    }
+    
 }
 

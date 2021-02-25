@@ -115,19 +115,24 @@ var myChart = new Chart(firstCanvas, {
     },
     options: {
         legend: {
-            display: false
+            display: false,
+            labels: {
+                defaultFontSize: 40,
+                fontColor: "black"
+            }
         },
         scale: {
             ticks: {
                display: false,
                maxTicksLimit: 10,
-               beginAtZero: true
-
+               beginAtZero: true,
             },
             gridLines: {
                 color: ['grey', 'grey', 'grey','grey','grey','grey','grey','grey','green']
               }
          },
+
+
          elements: {
             point:{
                 radius: 0

@@ -58,12 +58,17 @@ function validate() {
                 avatar);
 
             players[1] = p2;
-            window.location.href = "game.html";
+
+            var iframe = document.createElement('iframe');
+            iframe.style.display = "block";
+            iframe.src = "game.html";
+            document.body.appendChild(iframe);
+            gameStart();
 
         }
         
     }
-    console.log(players);
+    // console.log(players);
 
 }
 
@@ -90,7 +95,7 @@ var playerStat = new Player(
     ["", "Boots", "Staff", "Sword", "Bow"][parseInt(items.value)],
     0);
 
-    console.log(playerStat);
+    // console.log(playerStat);
 
     //------------------------------------------ Chart creation
 var myChart = new Chart(firstCanvas, {
@@ -151,5 +156,7 @@ var myChart = new Chart(firstCanvas, {
 // ------------------------- GAMESTART FUNCTION
 
 function gameStart(){
-    console.log("le jeu commence maintenant!");
+    alert("le jeu commence maintenant!");
+    // console.log(p1);
 }
+

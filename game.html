@@ -14,16 +14,14 @@
         <h1 class="text-center mb-4">Participe à notre Jeu "Troll Castel"</h1>
     </header>
     <main class="container">
-        <section id="logPlayers">
-            <section class="col-sm-3 col-md-3"></section> 
-            <section class="col-sm-6 col-md-6" id="journal">
+        <section id="logPlayers"> 
+            <section class="col-sm-12 col-md-12" id="journal">
                 <h5>Journal des logs</h5>
                 <section>
                     <p>Player 1 : Informations sur les étapes du jeux<br>
                     Player 2 : Informations sur les étapes du jeux</p>
                 </section> 
-            </section>
-            <section class="col-sm-3 col-md-3"></section>            
+            </section>            
         </section>
         <section class="row" id="displayCharacters">
             <section class="col-sm-5 col-md-5 actifP1" id="display1">
@@ -32,8 +30,8 @@
                     <h4>Guillaume</h4>
                     <img src="images/Bixby.png">
                     <p>Informations diverses concernant le Player</p>
-                    <div class="progress" style="height: 5px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" style="height: 18px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
                     </div>
                     <!-- <progress value="70" max="100">70 %</progress> -->
                 </section> 
@@ -45,8 +43,8 @@
                     <h4>Christian</h4>
                     <img src="images/Froddy.png">
                     <p>Informations diverses concernant le Player</p>
-                    <div class="progress" style="height: 5px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" style="height: 18px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
                     </div>
                 </section> 
             </section>
@@ -57,9 +55,11 @@
                 <button type="image" class="buttonRed" onClick="">Heal</button>
                 <button type="image" class="buttonRed" onClick="">Yield</button>
             </section>
-            <section class="col-sm-2 col-md-2"></section>
+            <section class="col-sm-2 col-md-2">
+                <button type="image" class="buttonGreen" onClick="">Replay</button>
+            </section>
             <section class="col-sm-5 col-md-5 text-center pr-4">
-                <button type="image" class="buttonDisable" onClick="">Hit</button>
+                <button type="image" class="buttonBlue" onClick="">Hit</button>
                 <button type="image" class="buttonBlue" onClick="">Heal</button>
                 <button type="image" class="buttonBlue" onClick="">Yield</button>
             </section>

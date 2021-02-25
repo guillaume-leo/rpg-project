@@ -48,6 +48,7 @@ function validate() {
             avatar.value = 0;
             items.value = 0;
             races.value = 0;
+            player++;
 
         } else {
             p2 = new Player(
@@ -58,8 +59,9 @@ function validate() {
 
             players[1] = p2;
             window.location.href = "game.html";
+
         }
-        player++;
+        
     }
     console.log(players);
 
@@ -126,6 +128,7 @@ var myChart = new Chart(firstCanvas, {
                display: false,
                maxTicksLimit: 10,
                beginAtZero: true,
+               max: 8
             },
             gridLines: {
                 color: ['grey', 'grey', 'grey','grey','grey','grey','grey','grey','green']
@@ -140,6 +143,13 @@ var myChart = new Chart(firstCanvas, {
         }}
 });
 }
-createGraph();
+// createGraph();
 
 //---------------------------FIN DU GRAPHE
+
+
+// ------------------------- GAMESTART FUNCTION
+
+function gameStart(){
+    console.log("le jeu commence maintenant!");
+}

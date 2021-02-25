@@ -76,7 +76,7 @@ class Player{
     }
     
     hit(p){
-        p.life -= (this.dammage + (Math.random() * 6)) * p.dammageTaken * p.getDodge(p.name) * this.getDoubleAttack();
+        p.life -= (this.dammage + ((Math.random() * 10)- 5)) * p.dammageTaken * this.getDodge(p) * this.getDoubleAttack();
     }
 
     heal(){
@@ -91,6 +91,18 @@ class Player{
             console.log(this.name + " has stolen " + lifeSteal + " of life of " + p.name);
         }
     }
-    
+
 }
 
+
+
+// QUELQUES TESTS:
+
+// p1 = new Player("gui", "Orcs","Sword","1");
+// p2 = new Player("Jan", "Elves","Bow","1");
+
+// console.log(p1);
+// console.log(p2);
+// p1.hit(p2);
+
+// console.log(p2.life);

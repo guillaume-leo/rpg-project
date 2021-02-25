@@ -12,12 +12,12 @@ html, body {
 }
 
 body {
-    background: #01467C;
-    background: -webkit-linear-gradient(top left, #E22011, #01467C);
-    background: -moz-linear-gradient(top left, #E22011, #01467C);
-    background: linear-gradient(to bottom right, #E22011, #01467C);
-    /* background: linear-gradient(-20deg, rgba(0,40,97,1), rgba(190,0,0,1)); */
-    background-repeat: repeat-y;
+    background-image: url(images/bg.jpg);
+    /* background: #01345D;
+    background: -webkit-linear-gradient(top, #E22011, #01345D);
+    background: -moz-linear-gradient(top, #E22011, #01345D);
+    background: linear-gradient(to bottom, #E22011, #01345D); */
+    background-repeat: no-repeat;
     font-family: 'Rajdhani', sans-serif;
     color: white;
     max-width: 90%;
@@ -154,7 +154,19 @@ label img {
     max-width: 90px;
 }
 
-@media only screen and (max-width: 500px) {
+iframe{
+    width:100%;
+    margin:0;
+    padding: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+    border-width: 0;
+}
+
+@media only screen and (max-width: 650px) {
     #displayCharacters {
         background-image: url(images/bgScreenSmartVS.jpg);
     }
@@ -164,17 +176,18 @@ label img {
     #display2 {
         margin-top: 35px;
     }
+    .buttonRed, .buttonBlue, .buttonDisable, .buttonGreen {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.2rem;
+      padding-bottom: 2px;
+      position:relative;
+      border:none;
+      width: 100px;
+      height:60px;
+      color:white;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 
 
-  iframe{
-      width:100%;
-      margin:0;
-      padding: 0;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left:0;
-      z-index: 1;
-      border-width: 0;
-  }

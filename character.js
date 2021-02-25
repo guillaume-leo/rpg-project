@@ -89,10 +89,19 @@ class Player{
     
     hit(p){
         p.life -= (this.dammage + ((Math.random() * 10)- 5)) * p.dammageTaken * this.getDodge(p) * this.getDoubleAttack();
+        console.log(p.life);
+        lifeP1.style.width = Math.round(p1.life) + "%";
+        lifeP1.innerHTML = Math.round(p1.life) + "%";
+        lifeP2.style.width = Math.round(p2.life) + "%";
+        lifeP2.innerHTML = Math.round(p2.life) + "%";
     }
 
     heal(){
-        this.life += this.healing;
+        this.life += this.healing + ((Math.random() * 10)- 5);
+        lifeP1.style.width = Math.round(p1.life) + "%";
+        lifeP1.innerHTML = Math.round(p1.life) + "%";
+        lifeP2.style.width = Math.round(p2.life) + "%";
+        lifeP2.innerHTML = Math.round(p2.life) + "%";
     }
 
     lifeSteal(p){
@@ -102,6 +111,9 @@ class Player{
             this.life += lifeSteal;
             console.log(this.name + " has stolen " + lifeSteal + " of life of " + p.name);
         }
+    }
+    yield(){
+        console.log(`${this.name} yield`);
     }
 
 }

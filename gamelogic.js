@@ -8,6 +8,90 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   
+function disableRed(){
+    hitP1.classList.remove("buttonRed");
+    healP1.classList.remove("buttonRed");
+    yieldP1.classList.remove("buttonRed");
+
+    hitP2.classList.add("buttonBlue");
+    healP2.classList.add("buttonBlue");
+    yieldP2.classList.add("buttonBlue");
+
+    hitP2.classList.remove("buttonDisable");
+    healP2.classList.remove("buttonDisable");
+    yieldP2.classList.remove("buttonDisable");
+
+    hitP1.classList.add("buttonDisable");
+    healP1.classList.add("buttonDisable");
+    yieldP1.classList.add("buttonDisable");
+
+    hitP1.setAttribute ("onClick", "");
+    healP1.setAttribute ("onClick", "");
+    yieldP1.setAttribute ("onClick", "");
+
+    hitP2.setAttribute ("onClick", "p2.hit(p1)");
+    healP2.setAttribute ("onClick", "p2.heal()");
+    yieldP2.setAttribute ("onClick", "p2.yield()");
+    
+}
+
+function disableBlue(){
+    hitP1.classList.add("buttonRed");
+    healP1.classList.add("buttonRed");
+    yieldP1.classList.add("buttonRed");
+
+    hitP2.classList.remove("buttonBlue");
+    healP2.classList.remove("buttonBlue");
+    yieldP2.classList.remove("buttonBlue");
+
+    hitP1.classList.remove("buttonDisable");
+    healP1.classList.remove("buttonDisable");
+    yieldP1.classList.remove("buttonDisable");
+
+    hitP2.classList.add("buttonDisable");
+    healP2.classList.add("buttonDisable");
+    yieldP2.classList.add("buttonDisable");
+
+    hitP2.setAttribute ("onClick", "");
+    healP2.setAttribute ("onClick", "");
+    yieldP2.setAttribute ("onClick", "");
+
+    hitP1.setAttribute ("onClick", "p1.hit(p2)");
+    healP1.setAttribute ("onClick", "p1.heal()");
+    yieldP1.setAttribute ("onClick", "p1.yield()");
+}
+
+
+function disableAllButtons(){
+    hitP2.classList.remove("buttonBlue");
+    healP2.classList.remove("buttonBlue");
+    yieldP2.classList.remove("buttonBlue");
+
+    hitP2.classList.add("buttonDisable");
+    healP2.classList.add("buttonDisable");
+    yieldP2.classList.add("buttonDisable");
+
+    hitP1.classList.remove("buttonRed");
+    healP1.classList.remove("buttonRed");
+    yieldP1.classList.remove("buttonRed");
+
+    hitP1.classList.add("buttonDisable");
+    healP1.classList.add("buttonDisable");
+    yieldP1.classList.add("buttonDisable");
+
+    hitP2.onclick = "";
+    healP2.onclick = "";
+    yieldP2.onclick="";
+
+    hitP1.onclick = "";
+    healP1.onclick = "";
+    yieldP1.onclick="";
+
+
+    replay.classList.remove('buttonGreen');
+    replay.classList.add('buttonDisable');
+
+}
 
 
 
@@ -178,9 +262,12 @@ p2 = new Player("Janus", "Human","Bow","3");
 
 gameInit();
 
+var turn = 0;
 
 async function gameInit(){
 
+
+    disableAllButtons();
     // d'abord on actualise les infos des players
     nameP1.innerHTML = p1.name;
     nameP2.innerHTML = p2.name;
@@ -192,6 +279,7 @@ async function gameInit(){
     lifeP2.innerHTML = p2.life + "%";
     infoP1.innerHTML = `race : ${p1.race} <br> item : ${p1.item}`;
     infoP2.innerHTML = `race : ${p2.race} <br> item : ${p2.item}`;
+    // petite animation sans interet 
     for (var i=0;i<20;i++){
         switch (i%3){
             case 0:
@@ -208,9 +296,18 @@ async function gameInit(){
             break;    
         }
     }
-    journalLog.innerHTML = " <br> c'est à 1!";
+    // on calcule qui sait qui commence
+    turn = Math.round(Math.random()* 100)%2;
+    console.log(turn);
+    if (turn == 0){
+        journalLog.innerHTML = `<br>c'est au tour de ${p1.name}`;
+        disableBlue();
+    }else{
+        journalLog.innerHTML = `<br>c'est au tour de ${p2.name}`;
+        disableRed();
+    }
 
 }
 
-
-
+hitP2.setAttribute ("onClick", "p2.hit(p1)");
+hitP1.setAttribute ("onClick", "p1.hit(p2)");

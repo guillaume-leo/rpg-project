@@ -176,17 +176,27 @@ iframe{
     #display2 {
         margin-top: 35px;
     }
+}
+
+@media only screen and (max-width: 1080px) {
     .buttonRed, .buttonBlue, .buttonDisable, .buttonGreen {
-      font-family: 'Luckiest Guy', cursive;
       font-size: 1.2rem;
       padding-bottom: 2px;
-      position:relative;
-      border:none;
       width: 100px;
-      height:60px;
-      color:white;
-      background-position: center;
-      background-repeat: no-repeat;
+      height:55px;
+    }
+    .buttonRed {
+      background-image:url(button/redSmart.png);
+    }
+    .buttonBlue {
+      background-image:url(button/blueSmart.png);
+    }
+    .buttonDisable {
+        color:rgb(145, 145, 145);
+      background-image:url(button/disableSmart.png);
+    }
+    .buttonGreen {
+      background-image:url(button/greenSmart.png);
     }
   }
 

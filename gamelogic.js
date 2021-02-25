@@ -58,7 +58,8 @@ function validate() {
                 avatar);
 
             players[1] = p2;
-
+            
+            document.getElementsByClassName('container')[0].remove();
             var iframe = document.createElement('iframe');
             iframe.style.display = "block";
             iframe.src = "game.html";
@@ -159,4 +160,3 @@ function gameStart(){
     alert("le jeu commence maintenant!");
     // console.log(p1);
 }
-

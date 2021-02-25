@@ -163,3 +163,6 @@ function gameStart(){
     alert("le jeu commence maintenant!");
     // console.log(p1);
 }
+
+
+document.getElementById('avatarP1').src="images/Froddy.png";

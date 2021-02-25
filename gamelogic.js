@@ -4,6 +4,10 @@ function myScale(value,min1,max1,min2,max2){
     return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
 
 
 
@@ -67,7 +71,7 @@ function validate() {
             iframe.style.display = "block";
             iframe.src = "game.html";
             document.body.appendChild(iframe);
-            gameStart();
+            gameInit();
 
         }
         
@@ -155,14 +159,58 @@ var myChart = new Chart(firstCanvas, {
 //---------------------------FIN DU GRAPHE
 
 
-// ------------------------- GAMESTART FUNCTION
+// ------------------------- GAME INIT FUNCTION
 
 // cette fonction est appellée après la creation des joueurs (ligne 70)
 
-function gameStart(){
-    alert("le jeu commence maintenant!");
-    // console.log(p1);
+// QUELQUES TESTS:
+
+p1 = new Player("guigui", "Orcs","Sword","1");
+p2 = new Player("Janus", "Human","Bow","3");
+
+// console.log(p1);
+// console.log(p2);
+// p1.hit(p2);
+
+// console.log(p2.life);
+
+
+
+gameInit();
+
+
+async function gameInit(){
+
+    // d'abord on actualise les infos des players
+    nameP1.innerHTML = p1.name;
+    nameP2.innerHTML = p2.name;
+    avatarP1.src = p1.avatar;
+    avatarP2.src = p2.avatar;
+    lifeP1.style.width = p1.life + "%";
+    lifeP1.innerHTML = p1.life + "%";
+    lifeP2.style.width = p2.life + "%";
+    lifeP2.innerHTML = p2.life + "%";
+    infoP1.innerHTML = `race : ${p1.race} <br> item : ${p1.item}`;
+    infoP2.innerHTML = `race : ${p2.race} <br> item : ${p2.item}`;
+    for (var i=0;i<20;i++){
+        switch (i%3){
+            case 0:
+                journalLog.innerHTML = "Veuillez patienter.   <br> nous allons choisir qui va commencer";
+                await sleep(150);
+            break;
+            case 1:
+                journalLog.innerHTML = "Veuillez patienter..  <br> nous allons choisir qui va commencer";
+                await sleep(150);
+            break;
+            case 2:
+                journalLog.innerHTML = "Veuillez patienter... <br> nous allons choisir qui va commencer";
+                await sleep(150);
+            break;    
+        }
+    }
+    journalLog.innerHTML = " <br> c'est à 1!";
+
 }
 
 
-document.getElementById('avatarP1').src="images/Froddy.png";
+

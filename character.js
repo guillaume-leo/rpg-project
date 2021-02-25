@@ -42,6 +42,18 @@ class Player{
                 this.lifeSteal += 10; // %!!!
                 break;
         }
+        // avatar:
+        switch (this.avatar){
+            case "1":
+                this.avatar = "images/Bixby.png";
+                break;
+            case "2":
+                this.avatar = "images/Froddy.png";
+                break;
+            case "3":
+                this.avatar = "images/Grelote.png";
+                break;
+        }
     }
 
     // une method qui va evaluer la chance qu'une doubleAttaque se produise

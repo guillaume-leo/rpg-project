@@ -1,3 +1,11 @@
+function play(){
+    if (hitP1.className == "buttonRed") {
+        disableRed();
+    } else {
+        disableBlue();
+    };
+}
+
 class Player{
     constructor(name, race, item, avatar){
         this.name = name;
@@ -60,8 +68,8 @@ class Player{
     getDoubleAttack(){
         var result = 1;
         if ((Math.random()*100) < this.doubleAttack){
-            console.log(this.name + " double attaque!");
             result ++;    // double attaque se produit
+            journalLog.innerHTML=this.name + " double attaque!";
         }
         return result;
     }
@@ -72,7 +80,7 @@ class Player{
         var result = 1;
         if ((Math.random()*100) < p.dodge){
             result --; // le dodge se produit
-            console.log(p.name +" a esquivé l'attaque!");
+            journalLog.innerHTML=p.name +" a esquivé l'attaque!";
         }
         return result;
     }
@@ -82,18 +90,39 @@ class Player{
         var result = 1;
         if ((Math.random()*100) < p.deflect){
             result --; // le dodge se produit
-            console.log(p.name +" deflect!");
+            journalLog.innerHTML=p.name +" deflect!";
         }
         return result;
     }
     
     hit(p){
-        p.life -= (this.dammage + ((Math.random() * 10)- 5)) * p.dammageTaken * this.getDodge(p) * this.getDoubleAttack();
-        console.log(p.life);
+        var totalDammage = parseInt((this.dammage + ((Math.random() * 10)- 5)) * p.dammageTaken * this.getDodge(p) * this.getDoubleAttack());
+        p.life -= totalDammage;
         lifeP1.style.width = Math.round(p1.life) + "%";
         lifeP1.innerHTML = Math.round(p1.life) + "%";
         lifeP2.style.width = Math.round(p2.life) + "%";
         lifeP2.innerHTML = Math.round(p2.life) + "%";
+        play();
+        time();
+        journalLog.innerHTML = `${this.name} inflige ${totalDammage} points de vie à ${p.name}`;
+
+        if (p1.life <= 0) {
+            display2.innerHTML="";
+            display2.classList.add("winnerP2");
+            disableAllButtons();
+            replay.classList.add("buttonGreen");
+            replay.classList.remove("buttonDisable");
+            replay.setAttribute ("onClick", `window.location = "index.html"`);
+            journalLog.innerHTML= `<br>${p.name} a gagné le jeu, BRAVO !`;
+        } else if (p2.life <= 0) {
+            display1.innerHTML="";
+            display1.classList.add("winnerP1");
+            disableAllButtons();
+            replay.classList.add("buttonGreen");
+            replay.classList.remove("buttonDisable");
+            replay.setAttribute ("onClick", `window.location = "index.html"`);
+            journalLog.innerHTML= `${this.name} a gagné le jeu, BRAVO !`;
+        }
     }
 
     heal(){
@@ -102,6 +131,8 @@ class Player{
         lifeP1.innerHTML = Math.round(p1.life) + "%";
         lifeP2.style.width = Math.round(p2.life) + "%";
         lifeP2.innerHTML = Math.round(p2.life) + "%";
+        play();
+        journalLog.innerHTML= `${this.name} s'est ajouté de la vie.`;
     }
 
     lifeSteal(p){
@@ -109,11 +140,12 @@ class Player{
             let lifeSteal = (p.life / 100 * 10);
             p.life -= lifeSteal;
             this.life += lifeSteal;
-            console.log(this.name + " has stolen " + lifeSteal + " of life of " + p.name);
+            journalLog.innerHTML=this.name + " has stolen " + lifeSteal + " of life of " + p.name;
         }
     }
     yield(){
-        console.log(`${this.name} yield`);
+        journalLog.innerHTML=`${this.name} yield`;
+        play();
     }
 
 }

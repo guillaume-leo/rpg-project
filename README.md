@@ -36,7 +36,7 @@ Ce site/jeu a été réalisé grâce à JAVASCRIPT/HTML5/CSS3 (Boostrap) et cons
   - FrontEnd: Guillaume-Leo Quet (+) & Christian Jadot (++)
   - BackEnd: Guillaume-Leo Quet (++) & Christian Jadot (+)
 
-- Délais des réalisations
+- Détails des réalisations
   - FrontEnd :
     - Création du layout, validation et démarrage de la mise en HTML5/CSS3.<br>
     - Récupération de tous les éléments visuels.<br>
@@ -46,6 +46,7 @@ Ce site/jeu a été réalisé grâce à JAVASCRIPT/HTML5/CSS3 (Boostrap) et cons
   - BackEnd :
     - Démarrage du codage du jeu en Javascript<br>
     - Structurer le Javascript en correspondance des balises HTML, récupération des "ID" à placer dans les codes concernés.<br>
+    - Certaines fonctions posent problèmes (Logs : orientation des textes), des solutions diverses sont cherchées.<br>
 
 <a name="Photos-licences"></a>
 ## Images licences

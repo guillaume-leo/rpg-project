@@ -7,6 +7,10 @@ function myScale(value,min1,max1,min2,max2){
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
+async function time() {
+    await sleep(1000);
+}
   
 function disableRed(){
     hitP1.classList.remove("buttonRed");
@@ -90,6 +94,7 @@ function disableAllButtons(){
 
     replay.classList.remove('buttonGreen');
     replay.classList.add('buttonDisable');
+    replay.onclick="";
 
 }
 
@@ -249,7 +254,7 @@ var myChart = new Chart(firstCanvas, {
 
 // QUELQUES TESTS:
 
-p1 = new Player("guigui", "Orcs","Sword","1");
+p1 = new Player("Guigui", "Orcs","Sword","1");
 p2 = new Player("Janus", "Human","Bow","3");
 
 // console.log(p1);
@@ -300,14 +305,11 @@ async function gameInit(){
     turn = Math.round(Math.random()* 100)%2;
     console.log(turn);
     if (turn == 0){
-        journalLog.innerHTML = `<br>c'est au tour de ${p1.name}`;
+        journalLog.innerHTML = `C'est au tour de ${p1.name}`;
         disableBlue();
     }else{
-        journalLog.innerHTML = `<br>c'est au tour de ${p2.name}`;
+        journalLog.innerHTML = `C'est au tour de ${p2.name}`;
         disableRed();
     }
 
 }
-
-hitP2.setAttribute ("onClick", "p2.hit(p1)");
-hitP1.setAttribute ("onClick", "p1.hit(p2)");

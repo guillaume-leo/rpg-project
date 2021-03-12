@@ -22,75 +22,69 @@
     <header>
         <h1 class="text-center my-4">Participe à notre Jeu "Troll Castel"</h1>
     </header>
-    <main class="container">
-        <form>
-            <section>
-                <h3 class="ml-3" id="inscription">Bonjour Player 1, créé ici ton personnage...</h3>
+    <main class="container row">
+        <section>
+            <h3 class="ml-3" id="inscription">Bonjour Player 1, créé ici ton personnage...</h3>
+        </section>
+        <section class="col-sm-12 col-md-6 align-middle">
+            <form>
+                <section id="creatCharacters" class="form-row align-middle">
+                    <section class="col-sm-12 col-md-12 align-center mt-3 align-middle">
+                        <input type="text" class="form-control" id="validationPlayer" placeholder="Player Name" value=""
+                            required>
+                        <!-- <label for="validationDefault01">Player Name</label> -->
+                    </section>
+                    <section class="col-sm-12 col-md-12 mt-3">
+                        <section class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="validationAvatar01" name="customRadio"
+                                value="1" checked="checked" required>
+                            <label class="custom-control-label" for="validationAvatar01"><img src="images/Bixby.png"
+                                    id="bixby"></label>
+                        </section>
+                        <section class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="validationAvatar02" name="customRadio"
+                                value="2" required>
+                            <label class="custom-control-label" for="validationAvatar02"><img src="images/Froddy.png"
+                                    id="froddy"></label>
+                        </section>
+                        <section class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="validationAvatar03" name="customRadio"
+                                value="3" required>
+                            <label class="custom-control-label" for="validationAvatar03"><img src="images/Grelote.png"
+                                    id="grelote"></label>
+                        </section>
+                    </section>
+                    <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
+                        <select onchange="createGraph()" class="custom-select form-control" id="validationItems" value=""
+                            required>
+                            <option value="0">Items</option>
+                            <option value="1">Boots</option>
+                            <option value="2">Staff</option>
+                            <option value="3">Sword</option>
+                            <option value="4">Bow</option>
+                        </select>
+                        <!-- <label for="validationDefault03">Items</label> -->
+                    </section>
+                    <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
+                        <select onchange="createGraph()" class="custom-select form-control" id="validationRaces" required>
+                            <option value="0">Races</option>
+                            <option value="1">Humans</option>
+                            <option value="2">Orcs</option>
+                            <option value="3">Elves</option>
+                            <option value="4">Vampires</option>
+                        </select>
+                        <!-- <label for="validationDefault04">Races</label> -->
+                    </section>
+                    <section class="col-sm-6 col-md-6 mt-3">
+                        <button class="btn btn-primary" onclick="validate();" type="button">Valider</button>
+                    </section>
+                </section>
+            </form>
+        </section>
+        <section class="col-sm-12 col-md-6 align-middle">
+            <section class="col-sm-12 col-md-12 mt-5" id="graphic">
+                <!-- <canvas id="graphic" width="300px" height="300px"></canvas> -->
             </section>
-            <section id="creatCharacters" class="form-row align-middle">
-                <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
-                    <input type="text" class="form-control" id="validationPlayer" placeholder="Player Name" value=""
-                        required>
-                    <!-- <label for="validationDefault01">Player Name</label> -->
-                </section>
-                <section class="col-sm-6 col-md-6 align-center mt-3 align-middle">
-                    <section class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="validationAvatar01" name="customRadio"
-                            value="1" checked="checked" required>
-                        <label class="custom-control-label" for="validationAvatar01"><img src="images/Bixby.png"
-                                id="bixby"></label>
-                    </section>
-                    <section class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="validationAvatar02" name="customRadio"
-                            value="2" required>
-                        <label class="custom-control-label" for="validationAvatar02"><img src="images/Froddy.png"
-                                id="froddy"></label>
-                    </section>
-                    <section class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="validationAvatar03" name="customRadio"
-                            value="3" required>
-                        <label class="custom-control-label" for="validationAvatar03"><img src="images/Grelote.png"
-                                id="grelote"></label>
-                    </section>
-                </section>
-                <!--<section class="col-sm-2 col-md-2 align-center">
-                    <select class="custom-select form-control" id="validationAvatar" value="" required>
-                        <option value="0">Avatar</option>
-                        <option value="1">Bixby</option>
-                        <option value="2">Froddy</option>
-                        <option value="3">Grelote</option>
-                    </select>
-                    <!-- <label for="validationDefault02">Avatar</label>
-                </section>-->
-                <section class="col-sm-6 col-md-6 align-center mt-5 align-middle">
-                    <select onchange="createGraph()" class="custom-select form-control" id="validationItems" value=""
-                        required>
-                        <option value="0">Items</option>
-                        <option value="1">Boots</option>
-                        <option value="2">Staff</option>
-                        <option value="3">Sword</option>
-                        <option value="4">Bow</option>
-                    </select>
-                    <!-- <label for="validationDefault03">Items</label> -->
-                </section>
-                <section class="col-sm-6 col-md-6 align-center mt-5 align-middle">
-                    <select onchange="createGraph()" class="custom-select form-control" id="validationRaces" required>
-                        <option value="0">Races</option>
-                        <option value="1">Humans</option>
-                        <option value="2">Orcs</option>
-                        <option value="3">Elves</option>
-                        <option value="4">Vampires</option>
-                    </select>
-                    <!-- <label for="validationDefault04">Races</label> -->
-                </section>
-                <section class="col-sm-12 col-md-12 mt-5" id="graphic">
-                    <!-- <canvas id="graphic" width="300px" height="300px"></canvas> -->
-                </section>
-                <section class="col-sm-6 col-md-6 mt-5">
-                    <button class="btn btn-primary" onclick="validate();" type="button">Valider</button>
-                </section>
-            </section>
-        </form>
         </section>
     </main>
 

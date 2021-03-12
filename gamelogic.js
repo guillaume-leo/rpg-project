@@ -251,12 +251,12 @@ var playerStat = new Player(
 
 
     //------------------------------------------ Chart creation
+Chart.defaults.global.defaultFontColor = 'white';
 var myChart = new Chart(firstCanvas, {
     type: 'radar',
     data: {
         labels: ['life', 'dodge', 'healing', 'dammage', 'doubleAttack', 'dammageTaken','deflect', 'lifeSteal'],
         datasets: [{
-
             data: [
                 myScale(playerStat.life,0,140,1,8),
                 myScale(playerStat.dodge,8,13,1,8),
@@ -270,7 +270,8 @@ var myChart = new Chart(firstCanvas, {
             backgroundColor: [
                 'rgba(0, 0, 255, 0.0)',
             ],
-            borderColor: 'rgba(0, 0, 255 ,1.0)'
+            borderColor: 'rgba(0, 0, 255 ,1.0)',
+
         }]
     },
     options: {
@@ -289,11 +290,9 @@ var myChart = new Chart(firstCanvas, {
                max: 8
             },
             gridLines: {
-                color: ['grey', 'grey', 'grey','grey','grey','grey','grey','grey','green']
+                color: ['lightGray', 'lightGray', 'lightGray','lightGray','lightGray','lightGray','lightGray','lightGray','green']
               }
          },
-
-
          elements: {
             point:{
                 radius: 0

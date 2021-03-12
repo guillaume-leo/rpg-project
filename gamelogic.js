@@ -1,3 +1,12 @@
+// document.getElementsByClassName('container')[0].remove();
+var iframe = document.createElement('iframe');
+iframe.style.display = "block";
+iframe.style.visibility = "hidden";
+iframe.setAttribute('id', 'iframeGame');
+iframe.src = "game.html";
+document.body.appendChild(iframe);
+
+
 // usefull functions
 
 function myScale(value,min1,max1,min2,max2){
@@ -11,8 +20,24 @@ function sleep(ms) {
 async function time() {
     await sleep(1000);
 }
+
+
+
+
+
   
 function disableRed(){
+
+    // select iframe
+var iframe = document.getElementById("iframeGame");
+// select buttons
+var hitP1 = iframe.contentWindow.document.getElementById('hitP1');
+var hitP2 = iframe.contentWindow.document.getElementById('hitP2');
+var healP1 = iframe.contentWindow.document.getElementById('healP1');
+var healP2 = iframe.contentWindow.document.getElementById('healP2');
+var yieldP1 = iframe.contentWindow.document.getElementById('yieldP1');
+var yieldP2 = iframe.contentWindow.document.getElementById('yieldP2');
+
     hitP1.classList.remove("buttonRed");
     healP1.classList.remove("buttonRed");
     yieldP1.classList.remove("buttonRed");
@@ -33,13 +58,24 @@ function disableRed(){
     healP1.setAttribute ("onClick", "");
     yieldP1.setAttribute ("onClick", "");
 
-    hitP2.setAttribute ("onClick", "p2.hit(p1)");
-    healP2.setAttribute ("onClick", "p2.heal()");
+    hitP2.onclick = function(){p2.hit(p1)};
+    healP2.onclick = function(){p2.heal()};
     yieldP2.setAttribute ("onClick", "p2.yield()");
     
 }
 
 function disableBlue(){
+
+// select iframe
+var iframe = document.getElementById("iframeGame");
+// select buttons
+var hitP1 = iframe.contentWindow.document.getElementById('hitP1');
+var hitP2 = iframe.contentWindow.document.getElementById('hitP2');
+var healP1 = iframe.contentWindow.document.getElementById('healP1');
+var healP2 = iframe.contentWindow.document.getElementById('healP2');
+var yieldP1 = iframe.contentWindow.document.getElementById('yieldP1');
+var yieldP2 = iframe.contentWindow.document.getElementById('yieldP2');
+
     hitP1.classList.add("buttonRed");
     healP1.classList.add("buttonRed");
     yieldP1.classList.add("buttonRed");
@@ -60,14 +96,30 @@ function disableBlue(){
     healP2.setAttribute ("onClick", "");
     yieldP2.setAttribute ("onClick", "");
 
-    hitP1.setAttribute ("onClick", "p1.hit(p2)");
-    healP1.setAttribute ("onClick", "p1.heal()");
+    hitP1.onclick = function(){ p1.hit(p2) };
+    healP1.onclick = function() {p1.heal();};
     yieldP1.setAttribute ("onClick", "p1.yield()");
 }
 
 
+
+
 function disableAllButtons(){
-    hitP2.classList.remove("buttonBlue");
+
+
+    // select iframe
+var iframe = document.getElementById("iframeGame");
+// select buttons
+var hitP1 = iframe.contentWindow.document.getElementById('hitP1');
+var hitP2 = iframe.contentWindow.document.getElementById('hitP2');
+var healP1 = iframe.contentWindow.document.getElementById('healP1');
+var healP2 = iframe.contentWindow.document.getElementById('healP2');
+var yieldP1 = iframe.contentWindow.document.getElementById('yieldP1');
+var yieldP2 = iframe.contentWindow.document.getElementById('yieldP2');
+var replay = iframe.contentWindow.document.getElementById('replay');
+
+
+    hitP2.classList.remove("buttonBlue"); 
     healP2.classList.remove("buttonBlue");
     yieldP2.classList.remove("buttonBlue");
 
@@ -110,17 +162,18 @@ let player = 1;
 
 function validate() {
 
-// on récupère toutes les valeurs qui nous interessent, name avatar, item et races
+// on récupère toutes les valeurs qui nous interessent, name, avatar, item et races
 
     var name = document.getElementById("validationPlayer");
-    var avatar = 0
+    var avatar = 0;
     var items = document.getElementById("validationItems");
     var races = document.getElementById("validationRaces");
 
     var radios = document.getElementsByName('customRadio');
-
-    for (var i = 0, i = radios.length; i < length; i++) {
+    
+    for (var i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
+          console.log(i,radios[i].checked)
         avatar = radios[i].value;
         break;
       }
@@ -156,10 +209,11 @@ function validate() {
             players[1] = p2;
                 // puis on supprime tout ce qu'il y a sur la page et on fait apparraitre la page game.html dans une iframe
             document.getElementsByClassName('container')[0].remove();
-            var iframe = document.createElement('iframe');
-            iframe.style.display = "block";
-            iframe.src = "game.html";
-            document.body.appendChild(iframe);
+            // var iframe = document.createElement('iframe');
+            // iframe.style.display = "block";
+            // iframe.src = "game.html";
+            // document.body.prepend(iframe);
+            iframe.style.visibility = "visible";
             gameInit();
 
         }
@@ -172,9 +226,12 @@ function validate() {
 // ------------------------------------------ GRAPH
 
 
+var myChart = []
+
 function createGraph(){
 
 var firstCanvas = document.createElement("canvas");
+firstCanvas.style.height = "100px";
 var parent = document.getElementById("graphic");
 parent.innerHTML = '';
 parent.appendChild(firstCanvas);
@@ -191,7 +248,7 @@ var playerStat = new Player(
     ["Boots", "Boots", "Staff", "Sword", "Bow"][parseInt(items.value)],
     0);
 
-    // console.log(playerStat);
+
 
     //------------------------------------------ Chart creation
 var myChart = new Chart(firstCanvas, {
@@ -199,7 +256,7 @@ var myChart = new Chart(firstCanvas, {
     data: {
         labels: ['life', 'dodge', 'healing', 'dammage', 'doubleAttack', 'dammageTaken','deflect', 'lifeSteal'],
         datasets: [{
-            label: '# of Votes',
+
             data: [
                 myScale(playerStat.life,0,140,1,8),
                 myScale(playerStat.dodge,8,13,1,8),
@@ -243,7 +300,29 @@ var myChart = new Chart(firstCanvas, {
             }
         }}
 });
+
+
+
+
+changeFontSize();
+
+
+
 }
+function changeFontSize() {
+    for (var x in myChart) {
+       // set/change the font-size
+       myChart[x].options.scales.xAxes[0].ticks.minor.fontSize = 50;
+       myChart[x].options.scales.yAxes[0].ticks.minor.fontSize = 50;
+ 
+       // set proper spacing for resized font
+       myChart[x].options.scales.xAxes[0].ticks.fontSize = 50;
+       myChart[x].options.scales.yAxes[0].ticks.fontSize = 50;
+ 
+       // update chart to apply new font-size
+       myChart[x].update();
+    }
+ }
 
 //---------------------------FIN DU GRAPHE
 
@@ -254,8 +333,8 @@ var myChart = new Chart(firstCanvas, {
 
 // QUELQUES TESTS:
 
-p1 = new Player("Guigui", "Orcs","Sword","1");
-p2 = new Player("Janus", "Human","Bow","3");
+// p1 = new Player("Guigui", "Orcs","Sword","1");
+// p2 = new Player("Janus", "Human","Bow","3");
 
 // console.log(p1);
 // console.log(p2);
@@ -265,12 +344,25 @@ p2 = new Player("Janus", "Human","Bow","3");
 
 
 
-gameInit();
+// gameInit();
 
 var turn = 0;
 
+
+
+
+
 async function gameInit(){
 
+    var nameP1 = iframe.contentWindow.document.getElementById('nameP1');
+    var nameP2 = iframe.contentWindow.document.getElementById('nameP2');
+    var avatarP1 = iframe.contentWindow.document.getElementById('avatarP1');
+    var avatarP2 = iframe.contentWindow.document.getElementById('avatarP2');
+    var lifeP1 = iframe.contentWindow.document.getElementById('lifeP1');
+    var lifeP2 = iframe.contentWindow.document.getElementById('lifeP2');
+    var infoP1 = iframe.contentWindow.document.getElementById('infoP1');
+    var infoP2 = iframe.contentWindow.document.getElementById('infoP2');
+    var journalLog = iframe.contentWindow.document.getElementById('journalLog');
 
     disableAllButtons();
     // d'abord on actualise les infos des players
@@ -303,7 +395,6 @@ async function gameInit(){
     }
     // on calcule qui sait qui commence
     turn = Math.round(Math.random()* 100)%2;
-    console.log(turn);
     if (turn == 0){
         journalLog.innerHTML = `C'est au tour de ${p1.name}`;
         disableBlue();
@@ -311,5 +402,7 @@ async function gameInit(){
         journalLog.innerHTML = `C'est au tour de ${p2.name}`;
         disableRed();
     }
+
+
 
 }

@@ -10,6 +10,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
+/* 
+canvas{
+    height: 300px !important;
+    width: 800px !important;
+    display: inline;
+} */
 
 body {
     background-image: url(images/bg.jpg);

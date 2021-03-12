@@ -1,4 +1,21 @@
+function getAllParams(){
+    var nameP1 = iframe.contentWindow.document.getElementById('nameP1');
+    var nameP2 = iframe.contentWindow.document.getElementById('nameP2');
+    var avatarP1 = iframe.contentWindow.document.getElementById('avatarP1');
+    var avatarP2 = iframe.contentWindow.document.getElementById('avatarP2');
+    var lifeP1 = iframe.contentWindow.document.getElementById('lifeP1');
+    var lifeP2 = iframe.contentWindow.document.getElementById('lifeP2');
+    var infoP1 = iframe.contentWindow.document.getElementById('infoP1');
+    var infoP2 = iframe.contentWindow.document.getElementById('infoP2');
+    var journalLog = iframe.contentWindow.document.getElementById('journalLog');
+    var hitP1 = iframe.contentWindow.document.getElementById('hitP1');
+
+}
+
+
 function play(){
+    var hitP1 = iframe.contentWindow.document.getElementById('hitP1');
+
     if (hitP1.className == "buttonRed") {
         disableRed();
     } else {
@@ -64,11 +81,23 @@ class Player{
         }
     }
 
+
+
+
+    
+
     // une method qui va evaluer la chance qu'une doubleAttaque se produise
     getDoubleAttack(){
+
+
+
+
+
         var result = 1;
         if ((Math.random()*100) < this.doubleAttack){
             result ++;    // double attaque se produit
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
+
             journalLog.innerHTML=this.name + " double attaque!";
         }
         return result;
@@ -80,6 +109,7 @@ class Player{
         var result = 1;
         if ((Math.random()*100) < p.dodge){
             result --; // le dodge se produit
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
             journalLog.innerHTML=p.name +" a esquivé l'attaque!";
         }
         return result;
@@ -96,6 +126,15 @@ class Player{
     }
     
     hit(p){
+
+        var lifeP1 = iframe.contentWindow.document.getElementById('lifeP1');
+        var lifeP2 = iframe.contentWindow.document.getElementById('lifeP2');
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
+        var display1 = iframe.contentWindow.document.getElementById('display1');
+        var display2 = iframe.contentWindow.document.getElementById('display2');
+        var replay = iframe.contentWindow.document.getElementById('replay');
+                
+
         var totalDammage = parseInt((this.dammage + ((Math.random() * 10)- 5)) * p.dammageTaken * this.getDodge(p) * this.getDoubleAttack());
         p.life -= totalDammage;
         lifeP1.style.width = Math.round(p1.life) + "%";
@@ -107,6 +146,7 @@ class Player{
         journalLog.innerHTML = `${this.name} inflige ${totalDammage} points de vie à ${p.name}`;
 
         if (p1.life <= 0) {
+
             display2.innerHTML="";
             display2.classList.add("winnerP2");
             disableAllButtons();
@@ -126,6 +166,13 @@ class Player{
     }
 
     heal(){
+        
+        var lifeP1 = iframe.contentWindow.document.getElementById('lifeP1');
+        var lifeP2 = iframe.contentWindow.document.getElementById('lifeP2');
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
+
+
+
         this.life += this.healing + ((Math.random() * 10)- 5);
         lifeP1.style.width = Math.round(p1.life) + "%";
         lifeP1.innerHTML = Math.round(p1.life) + "%";
@@ -136,6 +183,10 @@ class Player{
     }
 
     lifeSteal(p){
+        var lifeP1 = iframe.contentWindow.document.getElementById('lifeP1');
+        var lifeP2 = iframe.contentWindow.document.getElementById('lifeP2');
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
+
         if (this.race == "Vampires"){
             let lifeSteal = (p.life / 100 * 10);
             p.life -= lifeSteal;
@@ -144,6 +195,7 @@ class Player{
         }
     }
     yield(){
+        var journalLog = iframe.contentWindow.document.getElementById('journalLog');
         journalLog.innerHTML=`${this.name} yield`;
         play();
     }

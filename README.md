@@ -43,10 +43,12 @@ Ce site/jeu a été réalisé grâce à JAVASCRIPT/HTML5/CSS3 (Boostrap) et cons
     - Adaptation des différentes zones du jeu.<br>
     - Structurer l'HTML en correspondance des actions Javascript, implémentation d' "ID" sur tous les éléments concernés.<br>
     - Fixer au mieux les éléments pour @media.<br>
+    - Insertion d'une musique d'ambiance tirée du jeu "World of Warcraft".<br><br>
   - BackEnd :
     - Démarrage du codage du jeu en Javascript<br>
     - Structurer le Javascript en correspondance des balises HTML, récupération des "ID" à placer dans les codes concernés.<br>
     - Certaines fonctions posent problèmes (Logs : orientation des textes), des solutions diverses sont cherchées.<br>
+    - Insertion d'un graphique chartjs pour présenter sur celui-ci les valeurs de chaque paramètre d'un joueur.<br>
 
 <a name="Photos-licences"></a>
 ## Images licences
